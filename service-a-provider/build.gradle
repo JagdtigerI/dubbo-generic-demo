@@ -1,0 +1,28 @@
+//buildscript {
+//    ext {
+//        springBootVersion = '2.1.4.RELEASE'
+//    }
+//    dependencies {
+//        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+//    }
+//    repositories {
+//        mavenLocal()
+//        maven {
+//            credentials {
+//                username "shenhd"
+//                password "gdlcjMLCcWwNchwHzt4J"
+//            }
+//            url = 'http://service.mosrv.com:8081/content/groups/public/'
+//        }
+//        mavenCentral()
+//    }
+//}
+
+plugins {
+    id 'java'
+    id 'org.springframework.boot'
+}
+
+dependencies {
+    compile project(':service-a-api')
+}

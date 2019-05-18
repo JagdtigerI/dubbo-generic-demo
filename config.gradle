@@ -1,0 +1,7 @@
+ext {
+    projectVersion = '1.0.0-SNAPSHOT'
+
+    springBootVersion = '2.1.4.RELEASE'
+    junitVersion = '4.12'
+    dubboVersion = '0.2.0'
+}

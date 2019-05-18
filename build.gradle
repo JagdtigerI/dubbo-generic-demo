@@ -1,0 +1,58 @@
+group 'com.dulio.demo'
+version '1.0-SNAPSHOT'
+
+apply from: 'config.gradle'
+
+buildscript {
+    ext {
+        springBootVersion = '2.1.4.RELEASE'
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
+    repositories {
+        mavenLocal()
+        mavenCentral()
+    }
+}
+
+allprojects {
+    apply plugin: 'idea'
+    group = 'com.dulio.demo'
+    version = '1.0.0-SNAPSHOT'
+    repositories {
+        mavenLocal()
+        mavenCentral()
+    }
+}
+
+subprojects {
+    apply plugin: 'java'
+    //config java
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
+
+    dependencies {
+        //SpringBoot
+        compile "org.springframework.boot:spring-boot-starter:${springBootVersion}"
+        compile "org.springframework.boot:spring-boot-starter-web:${springBootVersion}"
+        compile "org.springframework.boot:spring-boot-starter-mvc:${springBootVersion}"
+        compile group: 'org.aspectj', name: 'aspectjweaver', version: '1.9.4'
+
+        // dubbo
+//        compile "com.alibaba.boot:dubbo-spring-boot-starter:${dubboVersion}"
+        compile group: 'org.apache.dubbo', name: 'dubbo', version: '2.7.1'
+        compile group: 'org.apache.dubbo', name: 'dubbo-rpc-rest', version: '2.7.1'
+        compile group: 'org.apache.curator', name: 'curator-framework', version: '2.13.0'
+        compile group: 'org.apache.curator', name: 'curator-recipes', version: '2.13.0'
+
+        testCompile "junit:junit:${junitVersion}"
+        testCompile "org.springframework.boot:spring-boot-starter-test:${springBootVersion}"
+    }
+}
+
+defaultTasks 'clean', 'build'
+
+task gradleWrapper(type: Wrapper) {
+    gradleVersion = '4.10.2'
+}

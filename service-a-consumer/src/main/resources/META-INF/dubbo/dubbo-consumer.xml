@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://code.alibabatech.com/schema/dubbo
+        http://code.alibabatech.com/schema/dubbo/dubbo.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <context:property-placeholder location="classpath:META-INF/dubbo/dubbo-consumer.properties"/>
+    <dubbo:application name="${dubbo.application.name}" version="${dubbo.application.version}" owner="${dubbo.application.owner}"/>
+    <dubbo:registry id="zookeeper" protocol="${dubbo.registry.protocol}" address="${dubbo.registry.address}"/>
+    <dubbo:protocol name="${dubbo.protocol.dubbo.name}" port="${dubbo.protocol.dubbo.port}"/>
+    <dubbo:protocol name="${dubbo.protocol.rest.name}" port="${dubbo.protocol.rest.port}"/>
+
+    <!-- 声明需要暴露的服务接口 -->
+    <dubbo:service interface="com.dulio.demo.dubboServiceA.api.UsersService" ref="usersService"/>
+    <bean id="usersService" class="com.dulio.demo.dubboServiceA.consumer.UsersServiceImpl" />
+
+    <dubbo:reference id="userService" interface="com.dulio.demo.dubboServiceA.api.UserService"/>
+</beans>

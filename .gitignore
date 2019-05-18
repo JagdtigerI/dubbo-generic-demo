@@ -1,0 +1,10 @@
+.gradle
+.DS_Store
+build
+out
+logs
+.idea
+.gradle
+target
+wukong.iml
+application.pid
