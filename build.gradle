@@ -36,7 +36,7 @@ subprojects {
         //SpringBoot
         compile "org.springframework.boot:spring-boot-starter:${springBootVersion}"
         compile "org.springframework.boot:spring-boot-starter-web:${springBootVersion}"
-        compile "org.springframework.boot:spring-boot-starter-mvc:${springBootVersion}"
+//        compile "org.springframework.boot:spring-boot-starter-mvc:${springBootVersion}"
         compile group: 'org.aspectj', name: 'aspectjweaver', version: '1.9.4'
 
         // dubbo
