@@ -1,0 +1,46 @@
+//buildscript {
+//    ext {
+//        springBootVersion = '2.1.4.RELEASE'
+//    }
+//    dependencies {
+//        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+//    }
+//    repositories {
+//        mavenLocal()
+//        maven {
+//            credentials {
+//                username "shenhd"
+//                password "gdlcjMLCcWwNchwHzt4J"
+//            }
+//            url = 'http://service.mosrv.com:8081/content/groups/public/'
+//        }
+//        mavenCentral()
+//    }
+//}
+
+plugins {
+    id 'java'
+}
+
+dependencies {
+}
+
+//bootJar {
+//    mainClassName = 'com.dulio.demo.dubboServiceA.api.BootApplication'
+//    version = project.version
+//    sourceSets.main.resources.srcDirs = ["src/main/java","src/main/resources"]
+//    archiveName "dubbo-servie-A.jar"
+//    baseName = 'dubbo-servie-A'
+//    manifest {
+//        attributes 'Start-Class': 'com.dulio.demo.dubboServiceA.api.BootApplication', 'Implementation-Title': 'dubbo-servie-A', 'Implementation-Version': version
+//    }
+//}
+//
+//task deployCopy (type: Copy,dependsOn: jar){
+////    file('../target').deleteDir()
+//    from 'build/libs'
+//    into '../target'
+//    include '*.jar'
+//}
+//
+//build.dependsOn deployCopy

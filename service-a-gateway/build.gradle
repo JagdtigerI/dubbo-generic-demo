@@ -25,4 +25,6 @@ plugins {
 
 dependencies {
     compile project(':service-a-api')
+    compile project(':dubbo-extend')
+
 }

@@ -1,5 +1,6 @@
 rootProject.name = 'dubbo-service-A'
 
+include 'dubbo-extend'
 include 'service-a-api'
 include 'service-a-provider'
 include 'service-a-consumer'

@@ -15,7 +15,7 @@
     <dubbo:protocol name="${dubbo.protocol.rest.name}" port="${dubbo.protocol.rest.port}"/>
 
     <!-- 声明需要暴露的服务接口 -->
-    <dubbo:service interface="com.dulio.demo.dubboServiceA.api.UserService" ref="userService"/>
+    <dubbo:service interface="com.dulio.demo.dubboServiceA.api.UserService" ref="userService" loadbalance="demo"/>
     <bean id="userService" class="com.dulio.demo.dubboServiceA.provider.UserServiceImpl" />
 
 <!--    &lt;!&ndash; 声明需要暴露的服务接口 &ndash;&gt;-->
